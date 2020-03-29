@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+# -*- coding: utf-8 -*-
 
 # This script is pretty close in striping out functionality with
 # nbstripout, and supports textconv mode (with -t). It is just much
@@ -37,7 +38,7 @@ import argparse
 import io
 import sys
 
-from . import VERSION
+from . import __version__
 
 
 def main():
@@ -61,7 +62,7 @@ def main():
         "--version",
         help=f"Show the %(prog)s version number",
         action="version",
-        version=f"%(prog)s {VERSION}",
+        version=f"%(prog)s {__version__}",
     )
     parser.add_argument("files", nargs="*", help="Files to strip output from")
     args = parser.parse_args()
